@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>链接</title>
+    <url>/2024/02/19/link/</url>
+    <content><![CDATA[<h3 id="Android-Debug-Bridge工具包">Android Debug Bridge工具包</h3>
+<p><a href="https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn#downloads">https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn#downloads</a></p>
+]]></content>
+      <categories>
+        <category>链接</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的信息</title>
-    <url>/project/2024/02/18/myinfo/</url>
+    <url>/2024/02/18/myinfo/</url>
     <content><![CDATA[<h2 id="个人信息">个人信息</h2>
 <h3 id="最高学历">最高学历</h3>
 <p>本科</p>
