@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>链接</title>
+    <url>./2024/02/19/link/</url>
+    <content><![CDATA[<p>1.<a href="https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn#downloads">Android Debug Bridge工具包</a></p>
+<p>2.[<a href="https://cnocr.readthedocs.io/zh/latest/install/">🛠️ 安装 - CnOCR</a>]</p>
+]]></content>
+      <categories>
+        <category>链接</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>butterfly</title>
+    <url>./2024/02/23/butterfly/</url>
+    <content><![CDATA[<h2 id="使用过的魔改教程记录">使用过的魔改教程记录</h2>
+<h3 id="wowjs特效">wowjs特效</h3>
+<p>参考:<br>
+1.<a href="https://blog.anheyu.com/posts/sdxhu.html#%E6%B7%BB%E5%8A%A0-wowjs-%E7%89%B9%E6%95%88">添加wowjs特效</a><br>
+2.<a href="https://www.npmjs.com/package/hexo-butterfly-wowjs">wowjs文档</a></p>
+<h3 id="live2D看板娘">live2D看板娘</h3>
+<p>参考:<br>
+1.<a href="https://www.fomal.cc/posts/eec9786.html#Live2D%E6%95%99%E7%A8%8B%EF%BC%88%E5%BA%97%E9%95%BF%EF%BC%89">live2D教程</a></p>
+]]></content>
+      <categories>
+        <category>butterfly</category>
+      </categories>
+      <tags>
+        <tag>butterfly</tag>
+        <tag>魔改教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>adb操作雷电模拟器9</title>
+    <url>./2024/02/26/LDPlayer9/</url>
+    <content><![CDATA[<p>adb连接雷电模拟器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adb connect 127.0.0.1:5555</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>adb</category>
+      </categories>
+      <tags>
+        <tag>adb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>烟雨江湖</title>
+    <url>./2024/02/26/yanyu/</url>
+    <content><![CDATA[<p>运行环境：雷电模拟器9</p>
+<p>使用语言：python</p>
+<h2 id="坐标识别">坐标识别</h2>
+<p> 由于坐标文本太小，所以文字识别的效果并不好。因此将坐标截图进行变成黑白图片，然后将图片变成二位数组，并进行切割。将文字识别改成数组比较。</p>
+<h3 id="使用adb进行截图并将图片pull到电脑上">使用adb进行截图并将图片pull到电脑上</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">screenShot</span>(<span class="params">filename</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    截取雷电模拟器屏幕并保存在E盘adb文件夹中</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 截图在模拟器/sdcard/下</span></span><br><span class="line">    subprocess.run(<span class="string">&quot;cmd /c adb -s emulator-5554 shell screencap -p /sdcard/&#123;0&#125;&quot;</span>.<span class="built_in">format</span>(filename))</span><br><span class="line">    <span class="comment"># 将图片复制到e盘adb文件夹下</span></span><br><span class="line">    subprocess.run(<span class="string">&quot;cmd /c adb -s emulator-5554 pull /sdcard/&#123;0&#125; E://adb&quot;</span>.<span class="built_in">format</span>(filename))</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h3 id="将图片进行灰度图二值化">将图片进行灰度图二值化</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">binaryImage</span>(<span class="params">imagePath, threshold=<span class="number">150</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        将截图二值化</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 读取图片</span></span><br><span class="line">        im = cv2.imread(imagePath)</span><br><span class="line">        <span class="comment"># 将图像转为灰度图</span></span><br><span class="line">        imGray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)</span><br><span class="line">        <span class="comment"># 灰度图二值化</span></span><br><span class="line">        ret,binary = cv2.threshold(img_gray,<span class="number">127</span>,<span class="number">255</span>,cv2.THRESH_BINARY)</span><br><span class="line">        <span class="comment"># 返回二值化图像</span></span><br><span class="line">        cv2.imwrite(<span class="string">&quot;E:\\adb\\screen01.png&quot;</span>,binary)</span><br></pre></td></tr></table></figure>
+<h3 id="对数组进行处理，删除没有255的行列">对数组进行处理，删除没有255的行列</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">obj = cv2.imread(<span class="string">&quot;e:/adb/binary_image.png&quot;</span>)</span><br><span class="line">obj = cv2.cvtColor(obj, cv2.COLOR_BGR2GRAY)</span><br><span class="line">nuary = numpy.array(obj)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将横向不含255的排除</span></span><br><span class="line"><span class="built_in">print</span>(nuary.shape)</span><br><span class="line">new_array = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(nuary.shape[<span class="number">0</span>]):</span><br><span class="line">    <span class="keyword">if</span> <span class="number">255</span> <span class="keyword">in</span> nuary[i]:</span><br><span class="line">       new_array.append(nuary[i])</span><br><span class="line">nuary = numpy.array(new_array)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 纵向分割图片</span></span><br><span class="line">img_list = [[[] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>)]</span><br><span class="line">xuhao = -<span class="number">1</span></span><br><span class="line">l = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(nuary.shape[<span class="number">1</span>]):</span><br><span class="line">    <span class="keyword">if</span> <span class="number">255</span> <span class="keyword">in</span> nuary[:,i]:</span><br><span class="line">        <span class="keyword">if</span> i-l==<span class="number">1</span>:</span><br><span class="line">            xuhao = xuhao+<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            <span class="built_in">print</span>(xuhao)</span><br><span class="line">            <span class="built_in">print</span>(n)</span><br><span class="line">            img_list[xuhao][n].append(nuary[n,i])</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        l = i</span><br><span class="line"><span class="comment"># 清除空数组</span></span><br><span class="line">img_list.remove([])</span><br></pre></td></tr></table></figure>
+<p>以上属于东拼西凑起来的，要用还得捋一捋</p>
+]]></content>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>./2024/11/22/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start">Quick Start</h2>
+<h3 id="Create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
