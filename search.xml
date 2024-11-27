@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>链接</title>
-    <url>./2024/02/19/link/</url>
+    <url>/2024/02/19/link/</url>
     <content><![CDATA[<p>1.<a href="https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn#downloads">Android Debug Bridge工具包</a></p>
 <p>2.[<a href="https://cnocr.readthedocs.io/zh/latest/install/">🛠️ 安装 - CnOCR</a>]</p>
 ]]></content>
@@ -15,7 +15,7 @@
   </entry>
   <entry>
     <title>butterfly</title>
-    <url>./2024/02/23/butterfly/</url>
+    <url>/2024/02/23/butterfly/</url>
     <content><![CDATA[<h2 id="使用过的魔改教程记录">使用过的魔改教程记录</h2>
 <h3 id="wowjs特效">wowjs特效</h3>
 <p>参考:<br>
@@ -35,7 +35,7 @@
   </entry>
   <entry>
     <title>adb操作雷电模拟器9</title>
-    <url>./2024/02/26/LDPlayer9/</url>
+    <url>/2024/02/26/LDPlayer9/</url>
     <content><![CDATA[<p>adb连接雷电模拟器</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adb connect 127.0.0.1:5555</span><br></pre></td></tr></table></figure>
 ]]></content>
@@ -48,7 +48,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>./2024/11/22/hello-world/</url>
+    <url>/2024/11/22/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start">Quick Start</h2>
 <h3 id="Create-a-new-post">Create a new post</h3>
@@ -67,7 +67,7 @@
   </entry>
   <entry>
     <title>烟雨江湖</title>
-    <url>./2024/02/26/yanyu/</url>
+    <url>/2024/02/26/yanyu/</url>
     <content><![CDATA[<p>运行环境：雷电模拟器9</p>
 <p>使用语言：python</p>
 <h2 id="坐标识别">坐标识别</h2>
