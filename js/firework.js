@@ -1,4 +1,3 @@
-// fireworks.js
 document.addEventListener('DOMContentLoaded', function () {
     const canvas = document.createElement('canvas');
     canvas.id = 'fireworks-canvas';
@@ -19,20 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const fireworks = [];
     const particles = [];
-    const nameElement = document.createElement('div');
-    nameElement.id = 'name';
-    nameElement.style.position = 'absolute';
-    nameElement.style.top = '50%';
-    nameElement.style.left = '50%';
-    nameElement.style.transform = 'translate(-50%, -50%)';
-    nameElement.style.color = 'white';
-    nameElement.style.fontSize = '36px';
-    nameElement.style.fontFamily = 'Arial, sans-serif';
-    nameElement.style.opacity = '0';
-    nameElement.style.transition = 'opacity 1s ease-in-out';
-    body.appendChild(nameElement);
-
-    let nameShown = false;
 
     function randomColor() {
         return `hsl(${Math.random() * 360}, 100%, 50%)`;
@@ -69,14 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const particle = new Particle(this.x, this.y, this.color);
                 particles.push(particle);
             }
-            if (!nameShown) {
-                setTimeout(() => {
-                    nameElement.textContent = '张三'; // 可根据需要修改人名
-                    nameElement.style.opacity = 1;
-                    nameShown = true;
-                }, 1000);
-            }
-        }
+        }   
     }
 
     class Particle {
